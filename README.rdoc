@@ -1,3 +1,25 @@
 = dpi_cmi
 
 Description goes here
+
+== Install
+
+Important note: read install notes before installing.
+
+1. Make sure you have installed the Redmine version 2.0.0 or higher.
+2. Follow the Redmine plugin installation steps at:
+   http://www.redmine.org/wiki/redmine/Plugins.
+3. Install the plugin running the commands below from your Redmine directory
+   (if you are going to run Redmine in, e.g. the production environment, you
+   need to append RAILS_ENV=production to each line):
+     rake cmi:create_data
+     rake cmi:load_role_costs_history
+     rake cmi:load_user_role_history
+     rake cmi:recalculate_costs
+     rake cmi:migrate
+5. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails).
+6. Login to your Redmine install as an Administrator.
+7. Under admininstration, trackers, edit Goal tracker and select the that you want
+have Goals.
+
+Note: if you don't see any correctly the content of goals tab, you will need to copy dpi_cmi/assets/* to <redmine_root>/plugin_assets/dpi_cmi/ or to make a symbolic link <redmine_root>/plugin_assets/dpi_cmi pointing to dpi_cmi/assets

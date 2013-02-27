@@ -1,0 +1,13 @@
+<h2>Goals</h2>
+
+<% @goals.each_with_index do |goal, i| %>
+  <div class="goals <%= @values[i].underscore.gsub(' ', '_') %>">
+    <h3><%= @values[i] %></h3>
+
+    <ul>
+      <% goal.each do |g| %>
+        <li><%= g.subject %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

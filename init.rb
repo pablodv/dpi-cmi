@@ -1,8 +1,13 @@
 Redmine::Plugin.register :dpi_cmi do
   name 'Dpi Cmi plugin'
-  author 'Author name'
-  description 'This is a plugin for Redmine'
+  author 'Pablo Moreira Mora'
+  description 'DPI CMI is a Redmine plugin to have a summary of projects management metrics'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  author_url 'http://www.linkedin.com/in/pablomoreiramora'
+
+  permission :goals, { :goals => [:index] }, :public => true
+  menu :project_menu, :goals, { :controller => 'goals', :action => 'index' },
+    :caption => :'cmi.label_tab',
+    :after => :activity,
+    :params => :project_id
 end
