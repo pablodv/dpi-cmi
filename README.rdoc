@@ -12,11 +12,8 @@ Important note: read install notes before installing.
 3. Install the plugin running the commands below from your Redmine directory
    (if you are going to run Redmine in, e.g. the production environment, you
    need to append RAILS_ENV=production to each line):
-     rake cmi:create_data
-     rake cmi:load_role_costs_history
-     rake cmi:load_user_role_history
-     rake cmi:recalculate_costs
-     rake cmi:migrate
+     rake cmi:create_tracker
+     rake cmi:create_goal_kind
 5. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails).
 6. Login to your Redmine install as an Administrator.
 7. Under admininstration, trackers, edit Goal tracker and select the that you want
